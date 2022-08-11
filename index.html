@@ -15,7 +15,7 @@
          - generate your laughter -
     </h2>
     <div class="inputImage">
-        <form action="submit">
+        <form>
             <span>
                 IMAGE URL: <input type="url" name="image" id="image"/>
                 TOP TEXT: <input type="text" name="top text" id="topText"/>
@@ -23,9 +23,9 @@
             </span>
         </form>
     </div>
-    </div>
+    <canvas id="meme"></canvas>
     <div class="block">
-        <button type="button">Generate!</button>
+        <button type="button" id="generate">Generate!</button>
     </div>
     <script> src="index.js"</script>
 </body>
