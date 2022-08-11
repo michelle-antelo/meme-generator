@@ -15,18 +15,18 @@
          - generate your laughter -
     </h2>
     <div class="inputImage">
-        <form>
-            <span>
-                IMAGE URL: <input type="url" name="image" id="image"/>
-                TOP TEXT: <input type="text" name="top text" id="topText"/>
-                BOTTOM TEXT: <input type="text" name="bottom text" id="bottomText"/>
-            </span>
+        <form onsubmit="submitHandler(event)">
+            IMAGE URL: <input type="url" name="picture" id="picture"/>
+            TOP TEXT: <input type="text" name="top-text" id="topText"/>
+            BOTTOM TEXT: <input type="text" name="bottom-text" id="bottomText"/>
+            <div class="block">
+                <button type="submit" id="button" class="generate">Generate!</button>
+            </div>
         </form>
     </div>
-    <canvas id="meme"></canvas>
-    <div class="block">
-        <button type="button" id="generate">Generate!</button>
+    <div class="box">
+        
     </div>
-    <script src="index.js"></script>
 </body>
+<script src="index.js"></script>
 </html>
