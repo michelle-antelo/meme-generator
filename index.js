@@ -3,22 +3,33 @@ const topText = document.getElementById("topText");
 const bottomText = document.getElementsByTagName("bottomText");
 const meme = document.getElementById("meme");
 const generateButton = document.getElementById("button");
-const box = document.getElementsByClassName("box")[0];
+const memeImage = document.getElementsByClassName("memeImage")[0];
+const memeContainer = document.getElementsByClassName("memeContainer")[0];
 
 function submitHandler(e){
     e.preventDefault();
-    createMeme(box);
+    createFinalMeme(memeContainer);
     console.log("picture: ", picture.value);
 }
 
-function createMeme(){
-    const img = document.createElement('img');
-        img.src = picture.value;
-            box.appendChild(img);
-    img.addEventListener('click', (e) => removeButton(e))
-    box.appendChild(img);
+function createFinalMeme(parent){
+    const memeWrapper = document.createElement('div');
+    let memeTopText = document.createElement('h1');
+    let memeBottomText = document.createElement('h1');
+    let memeImg = document.createElement('img');
+    
+    memeImg.src = picture.value;
+    memeTopText.innerText = topText.value;
+    memeBottomText.innerText = bottomText.value;
+
+    parent.appendChild(memeWrapper);
+    memeWrapper.appendChild(memeImg);
+    memeWrapper.appendChild(memeTopText);
+    memeWrapper.appendChild(memeBottomText);
 }
 
+memeContainer.addEventListener('click', (e) => removeButton(e))
+
 function removeButton(e){
-    e.target.remove();
+    e.target.parentNode.remove();
 }
