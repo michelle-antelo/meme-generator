@@ -1,9 +1,7 @@
 const picture = document.getElementById("picture");
 const topText = document.getElementById("topText");
-const bottomText = document.getElementsByTagName("bottomText");
-const meme = document.getElementById("meme");
+const bottomText = document.getElementById("bottomText");
 const generateButton = document.getElementById("button");
-const memeImage = document.getElementsByClassName("memeImage")[0];
 const memeContainer = document.getElementsByClassName("memeContainer")[0];
 
 function submitHandler(e){
@@ -18,9 +16,13 @@ function createFinalMeme(parent){
     let memeBottomText = document.createElement('h1');
     let memeImg = document.createElement('img');
     
+    memeWrapper.className = "memeWrapper";
     memeImg.src = picture.value;
+    memeImg.className = "image";
     memeTopText.innerText = topText.value;
+    memeTopText.className = "topText";
     memeBottomText.innerText = bottomText.value;
+    memeBottomText.className = "bottomText";
 
     parent.appendChild(memeWrapper);
     memeWrapper.appendChild(memeImg);
