@@ -12,6 +12,9 @@ function submitHandler(e){
 
 function createFinalMeme(parent){
     const memeWrapper = document.createElement('div');
+    memeWrapper.addEventListener('click', function removeButton(e){
+        memeWrapper.remove()
+    })
     let memeTopText = document.createElement('h1');
     let memeBottomText = document.createElement('h1');
     let memeImg = document.createElement('img');
@@ -28,10 +31,4 @@ function createFinalMeme(parent){
     memeWrapper.appendChild(memeImg);
     memeWrapper.appendChild(memeTopText);
     memeWrapper.appendChild(memeBottomText);
-}
-
-memeContainer.addEventListener('click', (e) => removeButton(e))
-
-function removeButton(e){
-    e.target.parentNode.remove();
 }
